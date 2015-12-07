@@ -1,0 +1,14 @@
+#version 330
+
+uniform sampler2D myTexture;
+uniform float alphaChannel;
+
+in vec3 varyColor;
+in vec2 vTexCoord;
+		
+out vec4 fragColor;
+
+void main()
+{
+	fragColor = texture2D(myTexture, vTexCoord) + vec4(varyColor, alphaChannel);
+}

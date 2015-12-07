@@ -1,0 +1,37 @@
+﻿Build started 12/7/2015 5:28:07 PM.
+     1>Project "C:\Users\Omistaja\Desktop\ArtemisEngine\ArtemisEngine\ArtemisEngine.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\Users\Omistaja\Desktop\ArtemisEngine\ArtemisEngine\\include\ /IC:\Users\Omistaja\Desktop\ArtemisEngine\ArtemisEngine\\ /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _CRT_SECURE_NO_DEPRECATE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+     1>c:\users\omistaja\desktop\artemisengine\artemisengine\NetworkComponent.h(78): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Omistaja\Desktop\ArtemisEngine\Release\ArtemisEngine.exe" /NOLOGO /LIBPATH:C:\Users\Omistaja\Desktop\ArtemisEngine\ArtemisEngine\\include\ /LIBPATH:C:\Users\Omistaja\Desktop\ArtemisEngine\ArtemisEngine\\ FreeImaged.lib LibJXR.lib glew32d.lib glew32sd.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Omistaja\Desktop\ArtemisEngine\Release\ArtemisEngine.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Omistaja\Desktop\ArtemisEngine\Release\ArtemisEngine.lib" /MACHINE:X86 /SAFESEH Release\Component.obj
+         Release\GameObject.obj
+         Release\Image.obj
+         Release\Input.obj
+         Release\Main.obj
+         Release\Network.obj
+         Release\NetworkComponent.obj
+         Release\NetworkSystem.obj
+         Release\Object.obj
+         Release\ObjectLoader.obj
+         Release\Physics.obj
+         Release\PhysicsSystem.obj
+         Release\Renderable.obj
+         Release\RenderingContext.obj
+         Release\RenderingSystem.obj
+         Release\Resource.obj
+         Release\ResourceLoader.obj
+         Release\ResourceManager.obj
+         Release\SystemManager.obj
+         Release\Transformable.obj
+         Release\Window.obj
+         Release\WriteToFile.obj
+         Generating code
+         Finished generating code
+         ArtemisEngine.vcxproj -> C:\Users\Omistaja\Desktop\ArtemisEngine\Release\ArtemisEngine.exe
+     1>Done Building Project "C:\Users\Omistaja\Desktop\ArtemisEngine\ArtemisEngine\ArtemisEngine.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.83
