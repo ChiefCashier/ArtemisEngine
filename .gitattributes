@@ -1,0 +1,19 @@
+*text=auto
+
+*.cpp
+text
+*.csproj		  
+text eol=crlf
+*.glsl			  
+text
+*.h				  
+text
+*.inl			  
+text
+*.md			  
+text
+*.sln			  
+text eol=crlf
+*.vcxproj		  
+text eol=crlf
+*.vcxproj.filters text eol=crlf

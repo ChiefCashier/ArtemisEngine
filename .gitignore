@@ -1,0 +1,12 @@
+# directories
+
+**/obj/
+
+
+# file extensions
+
+*.pdb
+*.exe
+*.ilk
+*.suo
+*.user
