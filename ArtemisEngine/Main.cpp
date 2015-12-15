@@ -22,13 +22,13 @@ int main()
 	PhysicsSystem* PS = new PhysicsSystem(98.1f);
 
 	SM->AddSystem(RS);
-	SM->AddSystem(PS);
+	//SM->AddSystem(PS);
 
 	bool ON = true;
 
-	Renderable* R = ComponentFactory::CreateRenderable("assets/boxi2.obj", "assets/John-Piper.jpeg");
+	Renderable* R = ComponentFactory::CreateRenderable("assets/daebox.obj", "assets/tribaltatuointi.png");
 	Physics* P = ComponentFactory::CreatePhysicsComponent(PS);
-	Transformable* T = ComponentFactory::CreateTransformable(0,0,-200,0,45,0);
+	Transformable* T = ComponentFactory::CreateTransformable(0,0,-1,0,45,0);
 
 	GameObject* GO = new GameObject("ball");
 	GO->AddComponent(R);
@@ -36,7 +36,7 @@ int main()
 	GO->AddComponent(T);
 
 	RS->Draw(GO);
-
+	float r = 0;
 	while (true)
 	{
 
@@ -57,6 +57,8 @@ int main()
 		window.WindowMessageCheck();
 		SM->UpdateSystems();
 
+		T->SetRotation(Vector3<float>(0,r,0));
+		r += 0.1;
 
 		if (Input::isKeyPressed(Input::Escape))
 		{
