@@ -19,20 +19,20 @@ int main()
 
 	SystemManager* SM = new SystemManager();
 	RenderingSystem* RS = new RenderingSystem(rendContext);
-	PhysicsSystem* PS = new PhysicsSystem(98.1f);
+	//PhysicsSystem* PS = new PhysicsSystem(98.1f);
 
 	SM->AddSystem(RS);
 	//SM->AddSystem(PS);
 
 	bool ON = true;
 
-	Renderable* R = ComponentFactory::CreateRenderable("assets/daebox.obj", "assets/tribaltatuointi.png");
-	Physics* P = ComponentFactory::CreatePhysicsComponent(PS);
-	Transformable* T = ComponentFactory::CreateTransformable(0,0,-1,0,45,0);
+	Renderable* R = ComponentFactory::CreateRenderable("assets/daebox.obj", "assets/John-Piper.jpeg");
+	//Physics* P = ComponentFactory::CreatePhysicsComponent(PS);
+	Transformable* T = ComponentFactory::CreateTransformable(0,0,-50,0,0,0);
 
 	GameObject* GO = new GameObject("ball");
 	GO->AddComponent(R);
-	GO->AddComponent(P);
+	//GO->AddComponent(P);
 	GO->AddComponent(T);
 
 	RS->Draw(GO);
@@ -40,19 +40,33 @@ int main()
 	while (true)
 	{
 
+		//if (Input::isKeyPressed(Input::W))
+		//	GO->GetComponent<Physics>()->SetForces(Vector3<float>(0,  1000, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, 1, 0));
+		//if (Input::isKeyPressed(Input::S))
+		//	GO->GetComponent<Physics>()->SetForces(Vector3<float>(0, -1000, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, -1, 0));
+		//if (Input::isKeyPressed(Input::D))
+		//	GO->GetComponent<Physics>()->SetForces(Vector3<float>(1000, 0, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(1, 0, 0));
+		//if (Input::isKeyPressed(Input::A))
+		//	GO->GetComponent<Physics>()->SetForces(Vector3<float>(-1000, 0, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(-1, 0, 0));
+		//if (Input::isKeyPressed(Input::Up))
+		//	GO->GetComponent<Physics>()->SetForces(Vector3<float>(0, 0, 1000));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, 0, 1));
+		//if (Input::isKeyPressed(Input::Down))
+		//	GO->GetComponent<Physics>()->SetForces(Vector3<float>(0, 0, -1000));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, 0, -1));
+
 		if (Input::isKeyPressed(Input::W))
-				GO->GetComponent<Physics>()->SetForces(Vector3<float>(0,  1000, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, 1, 0));
-			if (Input::isKeyPressed(Input::S))
-				GO->GetComponent<Physics>()->SetForces(Vector3<float>(0, -1000, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, -1, 0));
-			if (Input::isKeyPressed(Input::D))
-				GO->GetComponent<Physics>()->SetForces(Vector3<float>(1000, 0, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(1, 0, 0));
-			if (Input::isKeyPressed(Input::A))
-				GO->GetComponent<Physics>()->SetForces(Vector3<float>(-1000, 0, 0));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(-1, 0, 0));
-			if (Input::isKeyPressed(Input::Up))
-				GO->GetComponent<Physics>()->SetForces(Vector3<float>(0, 0, 1000));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, 0, 1));
-			if (Input::isKeyPressed(Input::Down))
-				GO->GetComponent<Physics>()->SetForces(Vector3<float>(0, 0, -1000));//*/NC->SetOrigin(NC->GetOrigin() + Vector3<float>(0, 0, -1));
-		
+			T->SetOrigin(T->GetOrigin() + Vector3<float>(0, 0.01, 0));
+		if (Input::isKeyPressed(Input::S))
+			T->SetOrigin(T->GetOrigin() + Vector3<float>(0, -0.01, 0));
+		if (Input::isKeyPressed(Input::D))
+			T->SetOrigin(T->GetOrigin() + Vector3<float>(0.01, 0, 0));
+		if (Input::isKeyPressed(Input::A))
+			T->SetOrigin(T->GetOrigin() + Vector3<float>(-0.01, 0, 0));
+		if (Input::isKeyPressed(Input::Up))
+			T->SetOrigin(T->GetOrigin() + Vector3<float>(0, 0, 0.1));
+		if (Input::isKeyPressed(Input::Down))
+			T->SetOrigin(T->GetOrigin() + Vector3<float>(0, 0, -0.1));
+
+
 
 		window.WindowMessageCheck();
 		SM->UpdateSystems();

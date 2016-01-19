@@ -36,6 +36,7 @@ void RenderingSystem::RenderFrame()
 
 
 	ObjIT = drawableObj.begin();
+	glm::mat4 worldtransform;
 	while (ObjIT != drawableObj.end())
 	{
 
@@ -51,10 +52,10 @@ void RenderingSystem::RenderFrame()
 
 			glUniform1f(RC->get_alphaChannel(), Rend->getAlpha());
 
-			glm::mat4 _worldtransform = glm::translate(glm::vec3(Trans->GetOrigin().x, Trans->GetOrigin().y, Trans->GetOrigin().z));
-			_worldtransform *= glm::rotate(Trans->GetRotation().x, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::rotate(Trans->GetRotation().y, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::rotate(Trans->GetRotation().z, glm::vec3(0.0f, 0.0f, 1.0f));
+			worldtransform = glm::translate(glm::vec3(Trans->GetOrigin().x, Trans->GetOrigin().y, Trans->GetOrigin().z));
+			worldtransform *= glm::rotate(Trans->GetRotation().x, glm::vec3(1.0f, 0.0f, 0.0f)) * glm::rotate(Trans->GetRotation().y, glm::vec3(0.0f, 1.0f, 0.0f)) * glm::rotate(Trans->GetRotation().z, glm::vec3(0.0f, 0.0f, 1.0f));
 
-			glUniformMatrix4fv(RC->get_worldIndex(), 1, GL_FALSE, glm::value_ptr(_worldtransform));
+			glUniformMatrix4fv(RC->get_worldIndex(), 1, GL_FALSE, glm::value_ptr(worldtransform));
 
 
 			glActiveTexture(GL_TEXTURE0);

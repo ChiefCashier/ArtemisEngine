@@ -149,7 +149,7 @@ void RenderingContext::CreateAttributes()
 
 void RenderingContext::CreatePerspective(Window *window)
 {
-	_projection = glm::perspective(60.0f, static_cast<float>(window->_windowWidht) / window->_windowHeight, 0.1f, 1000.0f);
+	_projection = glm::perspective(glm::radians(90.0f), static_cast<GLfloat>(window->_windowWidht) / window->_windowHeight, 0.01f, 1000.0f);
 
 	glUseProgram(_program);
 	glUniformMatrix4fv(_projectionIndex, 1, GL_FALSE, glm::value_ptr(_projection));
@@ -159,7 +159,7 @@ void RenderingContext::CreatePerspective(Window *window)
 void RenderingContext::GLFinish()
 {
 	glClearColor(0.7f, 0.2f, 0.1f, 1.0f);
-
+	//glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glEnable(GL_DEPTH_TEST);
 	
 	glEnable(GL_BLEND);

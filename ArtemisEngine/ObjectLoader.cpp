@@ -61,7 +61,7 @@ Object* ObjectLoader::LoadObject(std::string GameObjectName)
 				glm::vec3 uv;
 				fscanf(file, "%f", &uv.x);
 				fscanf(file, "%f", &uv.y);
-				fscanf(file, "%f", &uv.z);
+				//fscanf(file, "%f", &uv.z);
 				tPosition.push_back(uv);
 			}
 			if (strcmp(line, "vn") == 0)
@@ -103,13 +103,14 @@ Object* ObjectLoader::LoadObject(std::string GameObjectName)
 		for (int i = 0; i < indexSize; i++)
 		{
 			int g = uvIndex.at(i) - 1;
+			int n = normalIndex.at(i) - 1;
 
 			vertices[i * 8 + 0] = vPosition.at(index.at(i) - 1).x;
 			vertices[i * 8 + 1] = vPosition.at(index.at(i) - 1).y;
 			vertices[i * 8 + 2] = vPosition.at(index.at(i) - 1).z;
-			vertices[i * 8 + 3] = /*0.0f;//*/ nPosition.at(g).x;
-			vertices[i * 8 + 4] = /*0.0f;//*/ nPosition.at(g).y;
-			vertices[i * 8 + 5] = /*0.0f;//*/ nPosition.at(g).z;
+			vertices[i * 8 + 3] = /*0.0f;//*/ nPosition.at(n).x;
+			vertices[i * 8 + 4] = /*0.0f;//*/ nPosition.at(n).y;
+			vertices[i * 8 + 5] = /*0.0f;//*/ nPosition.at(n).z;
 			vertices[i * 8 + 6] = tPosition.at(g).x;
 			vertices[i * 8 + 7] = tPosition.at(g).y;
 		}
